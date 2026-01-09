@@ -117,3 +117,14 @@ def plot_area_visualization(f, a, b, name, filename):
 # ---------------------------------------------------------
 # Main Experiment Logic
 # ---------------------------------------------------------
+
+def run_experiment(func_info):
+    name = func_info['name']
+    f = func_info['f']
+    get_integral = func_info['integral']
+    a = func_info['a']
+    b = func_info['b']
+    filename = func_info['filename']
+
+    # Exact value calculation
+    exact_val = get_integral(b) - get_integral(a)
