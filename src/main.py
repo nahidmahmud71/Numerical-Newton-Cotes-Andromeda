@@ -138,3 +138,19 @@ def run_experiment(func_info):
     # --- Step 1: Generate Area Visualization ---
     print("\n[1] Generating Area Visualization Graph...")
     plot_area_visualization(f, a, b, name, filename)
+
+  # --- Step 2: Simple Calculation Check ---
+    print("\n[2] BASELINE CHECK (Simple Rules)")
+    print(f"{'Method':<20} {'Segments':<15} {'Calculated':<20} {'Error':<15}")
+    print("-" * 70)
+    
+    try:
+        val = trapezoidal_rule(f, a, b, n=1)
+        print(f"{'Trapezoidal':<20} {1:<15} {val:<20.6f} {abs(val - exact_val):<15.6f}")
+        
+        val = simpson_13_rule(f, a, b, n=2)
+        print(f"{'Simpson 1/3':<20} {2:<15} {val:<20.6f} {abs(val - exact_val):<15.6f}")
+        
+        val = simpson_38_rule(f, a, b, n=3)
+        print(f"{'Simpson 3/8':<20} {3:<15} {val:<20.6f} {abs(val - exact_val):<15.6f}")
+    except Exception as e: print(e)
