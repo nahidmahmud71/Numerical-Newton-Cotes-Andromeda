@@ -128,3 +128,13 @@ def run_experiment(func_info):
 
     # Exact value calculation
     exact_val = get_integral(b) - get_integral(a)
+
+    
+    print("\n" + "=" * 70)
+    print(f"ANALYSIS FOR FUNCTION: {name}")
+    print(f"Exact Value: {exact_val:.6f}")
+    print("=" * 70)
+
+    # --- Step 1: Generate Area Visualization ---
+    print("\n[1] Generating Area Visualization Graph...")
+    plot_area_visualization(f, a, b, name, filename)
