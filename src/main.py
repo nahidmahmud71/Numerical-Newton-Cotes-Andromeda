@@ -172,3 +172,20 @@ def run_experiment(func_info):
             v_trap = trapezoidal_rule(f, a, b, n)
             v_s13 = simpson_13_rule(f, a, b, n)
             v_s38 = simpson_38_rule(f, a, b, n)
+            
+            errors['Trap'].append(abs(v_trap - exact_val))
+            errors['Simp13'].append(abs(v_s13 - exact_val))
+            errors['Simp38'].append(abs(v_s38 - exact_val))
+            
+            # Print row data (Removed in previous version, now added back)
+            print(f"{n:<5} {v_trap:<15.6f} {v_s13:<15.6f} {v_s38:<15.6f}")
+            
+        except ValueError:
+            pass
+
+    # Plotting Convergence Graph
+    plt.figure(figsize=(10, 6))
+    plt.loglog(h_values, errors['Trap'], '-o', label='Trapezoidal')
+    plt.loglog(h_values, errors['Simp13'], '-s', label="Simpson's 1/3")
+    plt.loglog(h_values, errors['Simp38'], '-^', label="Simpson's 3/8")
+    
