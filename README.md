@@ -76,14 +76,14 @@ Upon execution, statistical results will be displayed in the console, and visual
 
 Numerical-Newton-Cotes-BD71/
 │
+├── results/                 # 📊 Generated Output Graphs
+│   ├── poly_convergence.png
+│   ├── poly_visualization.png
+│   ├── sinx_convergence.png
+│   └── sinx_visualization.png
+│
 ├── src/                     # 💻 Source Code Directory
 │   └── main.py              # 🚀 Main Script (Run this file)
-│
-├── results/                 # 📊 Generated Output Graphs
-│   ├── poly_visualization.png
-│   ├── poly_convergence.png
-│   ├── sinx_visualization.png
-│   └── sinx_convergence.png
 │
 ├── requirements.txt         # 📦 Project Dependencies
 └── README.md                # 📘 Project Documentation
