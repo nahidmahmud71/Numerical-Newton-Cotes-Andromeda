@@ -189,3 +189,10 @@ def run_experiment(func_info):
     plt.loglog(h_values, errors['Simp13'], '-s', label="Simpson's 1/3")
     plt.loglog(h_values, errors['Simp38'], '-^', label="Simpson's 3/8")
     
+    plt.xlabel('Step Size (h)')
+    plt.ylabel('Absolute Error (Log Scale)')
+    plt.title(f'Convergence Analysis: {name}')
+    plt.grid(True, which="both", linestyle='--')
+    plt.legend()
+    plt.savefig(f'{filename}_convergence.png')
+    print(f"\n[Success] Convergence Graph saved: {filename}_convergence.png")
